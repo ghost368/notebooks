@@ -23,9 +23,6 @@ project_path.joinpath('notebooks', 'src')$\n$\n#%%
 with project_path.joinpath('notebooks', 'pyproject.toml').open(mode='r') as fid:
     # ...
     pass
-
-
-
 #%%
 # simple functions like .read_text(), read_bytes(), write_text(), write_bytes
 project_path.joinpath('notebooks', 'pyproject.toml').read_text()
