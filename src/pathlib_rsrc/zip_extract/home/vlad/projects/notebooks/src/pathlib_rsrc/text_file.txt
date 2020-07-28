@@ -1,0 +1,4 @@
+When a file operation fails for an I/O-related reason, 
+    the exception IOError is raised. This includes situations where
+     the operation is not defined for some reason, like seek() on a
+      tty device or writing a file opened for reading. <extra string> 
