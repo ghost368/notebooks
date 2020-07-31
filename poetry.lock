@@ -429,6 +429,17 @@ version = "1.2.0"
 
 [[package]]
 category = "main"
+description = "a modern parsing library"
+name = "lark-parser"
+optional = false
+python-versions = "*"
+version = "0.9.0"
+
+[package.extras]
+regex = ["regex"]
+
+[[package]]
+category = "main"
 description = "Python logging made (stupidly) simple"
 name = "loguru"
 optional = false
@@ -730,7 +741,7 @@ test = ["ipaddress", "mock", "unittest2", "enum34", "pywin32", "wmi"]
 [[package]]
 category = "main"
 description = "Run a subprocess in a pseudo terminal"
-marker = "sys_platform != \"win32\" or os_name != \"nt\" or python_version >= \"3.3\" and sys_platform != \"win32\""
+marker = "python_version >= \"3.3\" and sys_platform != \"win32\" or sys_platform != \"win32\" or os_name != \"nt\" or python_version >= \"3.3\" and sys_platform != \"win32\" and (python_version >= \"3.3\" and sys_platform != \"win32\" or sys_platform != \"win32\")"
 name = "ptyprocess"
 optional = false
 python-versions = "*"
@@ -1252,7 +1263,7 @@ version = "1.0.1"
 dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 
 [metadata]
-content-hash = "4b6e616c1a2060f9ce20cc68edaf2b17e3099b9b9ce67c246bafab1366ede93b"
+content-hash = "aae6a86214ca0b6adb5d5c338571e9d0f013dc232ee32ce6ac9051c2c0b14655"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1412,6 +1423,9 @@ kiwisolver = [
     {file = "kiwisolver-1.2.0-cp38-none-win32.whl", hash = "sha256:d069ef4b20b1e6b19f790d00097a5d5d2c50871b66d10075dab78938dc2ee2cf"},
     {file = "kiwisolver-1.2.0-cp38-none-win_amd64.whl", hash = "sha256:18d749f3e56c0480dccd1714230da0f328e6e4accf188dd4e6884bdd06bf02dd"},
     {file = "kiwisolver-1.2.0.tar.gz", hash = "sha256:247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f"},
+]
+lark-parser = [
+    {file = "lark-parser-0.9.0.tar.gz", hash = "sha256:9e7589365d6b6de1cca40b0eaec31104a3fb96a37a11a9dfd5098e95b50aa6cd"},
 ]
 loguru = [
     {file = "loguru-0.5.1-py3-none-any.whl", hash = "sha256:e5d362a43cd2fc2da63551d79a6830619c4d5b3a8b976515748026f92f351b61"},
