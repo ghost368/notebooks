@@ -830,6 +830,14 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 version = "2.4.7"
 
 [[package]]
+category = "dev"
+description = "Help visualize profiling data from cProfile with kcachegrind and qcachegrind"
+name = "pyprof2calltree"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.4.5"
+
+[[package]]
 category = "main"
 description = "Persistent/Functional/Immutable data structures"
 name = "pyrsistent"
@@ -1329,7 +1337,7 @@ version = "1.0.1"
 dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 
 [metadata]
-content-hash = "d4bc2441259b546e0e0bd6bb71247a59c427ed863628639f5eb21c510043f696"
+content-hash = "0e512336e6172b03a06db5b4bb6be9e4d66cf79fcc5db66d2884bc6b9e826cbc"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1756,6 +1764,9 @@ pygments = [
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
     {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
+]
+pyprof2calltree = [
+    {file = "pyprof2calltree-1.4.5.tar.gz", hash = "sha256:a635672ff31677486350b2be9a823ef92f740e6354a6aeda8fa4a8a3768e8f2f"},
 ]
 pyrsistent = [
     {file = "pyrsistent-0.16.0.tar.gz", hash = "sha256:28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3"},
