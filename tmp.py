@@ -1,10 +1,9 @@
-import multiprocessing as mp
+import numpy as np
+def my_lower(s):
+    return s.lower()
 
-
-def foo(q):
-    return q**2
-
-
-if __name__ == '__main__':
-    for q in range(1000):
-        foo(q)
+def correct_strings(arr):
+    output = []
+    for s in arr:
+        output.append(my_lower(s))
+    return np.array(output)
