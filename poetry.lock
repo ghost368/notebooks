@@ -93,12 +93,13 @@ description = "Classes Without Boilerplate"
 name = "attrs"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "20.1.0"
+version = "20.2.0"
 
 [package.extras]
 dev = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "sphinx", "sphinx-rtd-theme", "pre-commit"]
 docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
 tests = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
+tests_no_zope = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six"]
 
 [[package]]
 category = "main"
@@ -173,7 +174,7 @@ description = "Interactive plots and applications in the browser from Python"
 name = "bokeh"
 optional = false
 python-versions = ">=3.6"
-version = "2.2.0"
+version = "2.2.1"
 
 [package.dependencies]
 Jinja2 = ">=2.7"
@@ -348,7 +349,7 @@ description = "IPython: Productive Interactive Computing"
 name = "ipython"
 optional = false
 python-versions = ">=3.7"
-version = "7.17.0"
+version = "7.18.1"
 
 [package.dependencies]
 appnope = "*"
@@ -356,7 +357,7 @@ backcall = "*"
 colorama = "*"
 decorator = "*"
 jedi = ">=0.10"
-pexpect = "*"
+pexpect = ">4.3"
 pickleshare = "*"
 prompt-toolkit = ">=2.0.0,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.1.0"
 pygments = "*"
@@ -489,8 +490,8 @@ category = "main"
 description = "Jupyter terminal console"
 name = "jupyter-console"
 optional = false
-python-versions = ">=3.5"
-version = "6.1.0"
+python-versions = ">=3.6"
+version = "6.2.0"
 
 [package.dependencies]
 ipykernel = "*"
@@ -547,14 +548,14 @@ description = "Python logging made (stupidly) simple"
 name = "loguru"
 optional = false
 python-versions = ">=3.5"
-version = "0.5.1"
+version = "0.5.2"
 
 [package.dependencies]
 colorama = ">=0.3.4"
 win32-setctime = ">=1.0.0"
 
 [package.extras]
-dev = ["codecov (>=2.0.15)", "colorama (>=0.3.4)", "flake8 (>=3.7.7)", "isort (>=4.3.20)", "tox (>=3.9.0)", "tox-travis (>=0.12)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "Sphinx (>=2.2.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)", "black (>=19.3b0)"]
+dev = ["codecov (>=2.0.15)", "colorama (>=0.3.4)", "flake8 (>=3.7.7)", "tox (>=3.9.0)", "tox-travis (>=0.12)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "Sphinx (>=2.2.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)", "black (>=19.10b0)", "isort (>=5.1.1)"]
 
 [[package]]
 category = "main"
@@ -575,12 +576,13 @@ category = "main"
 description = "Loading market data for stocks and FX"
 name = "marketdata"
 optional = false
-python-versions = ">=3.8,<4.0"
-version = "0.2.0"
+python-versions = ">=3.7,<4.0"
+version = "0.3.0"
 
 [package.dependencies]
 alpha_vantage = ">=2.2.0,<3.0.0"
 bs4 = ">=0.0.1,<0.0.2"
+loguru = ">=0.5.1,<0.6.0"
 lxml = ">=4.5.2,<5.0.0"
 numpy = ">=1.19.1,<2.0.0"
 pandas = ">=1.1.1,<2.0.0"
@@ -592,7 +594,7 @@ xarray = ">=0.16.0,<0.17.0"
 [package.source]
 reference = ""
 type = "file"
-url = "../marketdata/dist/marketdata-0.2.0.tar.gz"
+url = "../marketdata/dist/marketdata-0.3.0.tar.gz"
 
 [[package]]
 category = "main"
@@ -632,7 +634,7 @@ description = "More routines for operating on iterables, beyond itertools"
 name = "more-itertools"
 optional = false
 python-versions = ">=3.5"
-version = "8.4.0"
+version = "8.5.0"
 
 [[package]]
 category = "main"
@@ -875,7 +877,7 @@ description = "Library for building powerful interactive command lines in Python
 name = "prompt-toolkit"
 optional = false
 python-versions = ">=3.6.1"
-version = "3.0.6"
+version = "3.0.7"
 
 [package.dependencies]
 wcwidth = "*"
@@ -1072,7 +1074,7 @@ description = "Jupyter Qt console"
 name = "qtconsole"
 optional = false
 python-versions = "*"
-version = "4.7.6"
+version = "4.7.7"
 
 [package.dependencies]
 ipykernel = ">=4.1"
@@ -1357,19 +1359,17 @@ version = "6.0.4"
 
 [[package]]
 category = "main"
-description = "Traitlets Python config system"
+description = "Traitlets Python configuration system"
 name = "traitlets"
 optional = false
-python-versions = "*"
-version = "4.3.3"
+python-versions = ">=3.7"
+version = "5.0.4"
 
 [package.dependencies]
-decorator = "*"
 ipython-genutils = "*"
-six = "*"
 
 [package.extras]
-test = ["pytest", "mock"]
+test = ["pytest"]
 
 [[package]]
 category = "main"
@@ -1434,7 +1434,7 @@ marker = "sys_platform == \"win32\""
 name = "win32-setctime"
 optional = false
 python-versions = ">=3.5"
-version = "1.0.1"
+version = "1.0.2"
 
 [package.extras]
 dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
@@ -1465,7 +1465,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "11ed1d88fc46952dec39cb2cc31f549329991ebd2af8a8d7d6d4cb574b85deed"
+content-hash = "a692bf1f3e77ec1f3b90e9cea638749a8eac941e09f334bd4395d87068bdf2fd"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -1526,8 +1526,8 @@ atomicwrites = [
     {file = "atomicwrites-1.4.0.tar.gz", hash = "sha256:ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"},
 ]
 attrs = [
-    {file = "attrs-20.1.0-py2.py3-none-any.whl", hash = "sha256:2867b7b9f8326499ab5b0e2d12801fa5c98842d2cbd22b35112ae04bf85b4dff"},
-    {file = "attrs-20.1.0.tar.gz", hash = "sha256:0ef97238856430dcf9228e07f316aefc17e8939fc8507e18c6501b761ef1a42a"},
+    {file = "attrs-20.2.0-py2.py3-none-any.whl", hash = "sha256:fce7fc47dfc976152e82d53ff92fa0407700c21acd20886a13777a0d20e655dc"},
+    {file = "attrs-20.2.0.tar.gz", hash = "sha256:26b54ddbbb9ee1d34d5d3668dd37d6cf74990ab23c828c2888dccdceee395594"},
 ]
 babel = [
     {file = "Babel-2.8.0-py2.py3-none-any.whl", hash = "sha256:d670ea0b10f8b723672d3a6abeb87b565b244da220d76b4dba1b66269ec152d4"},
@@ -1551,7 +1551,7 @@ bleach = [
     {file = "bleach-3.1.5.tar.gz", hash = "sha256:3c4c520fdb9db59ef139915a5db79f8b51bc2a7257ea0389f30c846883430a4b"},
 ]
 bokeh = [
-    {file = "bokeh-2.2.0.tar.gz", hash = "sha256:d790551db111a2cb43804987bc4da5d5d83124790c30ee4e9e88d4520325e13e"},
+    {file = "bokeh-2.2.1.tar.gz", hash = "sha256:a82e9eebd7a1e2ebb7f8fc1ead802fefd10a84daef8ec4bfc986121323948555"},
 ]
 bs4 = [
     {file = "bs4-0.0.1.tar.gz", hash = "sha256:36ecea1fd7cc5c0c6e4a1ff075df26d50da647b75376626cc186e2212886dd3a"},
@@ -1643,8 +1643,8 @@ ipykernel = [
     {file = "ipykernel-5.3.4.tar.gz", hash = "sha256:9b2652af1607986a1b231c62302d070bc0534f564c393a5d9d130db9abbbe89d"},
 ]
 ipython = [
-    {file = "ipython-7.17.0-py3-none-any.whl", hash = "sha256:5a8f159ca8b22b9a0a1f2a28befe5ad2b703339afb58c2ffe0d7c8d7a3af5999"},
-    {file = "ipython-7.17.0.tar.gz", hash = "sha256:b70974aaa2674b05eb86a910c02ed09956a33f2dd6c71afc60f0b128a77e7f28"},
+    {file = "ipython-7.18.1-py3-none-any.whl", hash = "sha256:2e22c1f74477b5106a6fb301c342ab8c64bb75d702e350f05a649e8cb40a0fb8"},
+    {file = "ipython-7.18.1.tar.gz", hash = "sha256:a331e78086001931de9424940699691ad49dfb457cea31f5471eae7b78222d5e"},
 ]
 ipython-genutils = [
     {file = "ipython_genutils-0.2.0-py2.py3-none-any.whl", hash = "sha256:72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8"},
@@ -1676,8 +1676,8 @@ jupyter-client = [
     {file = "jupyter_client-6.1.7.tar.gz", hash = "sha256:49e390b36fe4b4226724704ea28d9fb903f1a3601b6882ce3105221cd09377a1"},
 ]
 jupyter-console = [
-    {file = "jupyter_console-6.1.0-py2.py3-none-any.whl", hash = "sha256:b392155112ec86a329df03b225749a0fa903aa80811e8eda55796a40b5e470d8"},
-    {file = "jupyter_console-6.1.0.tar.gz", hash = "sha256:6f6ead433b0534909df789ea64f0a14cdf9b6b2360757756f08182be4b9e431b"},
+    {file = "jupyter_console-6.2.0-py3-none-any.whl", hash = "sha256:1d80c06b2d85bfb10bd5cc731b3db18e9023bc81ab00491d3ac31f206490aee3"},
+    {file = "jupyter_console-6.2.0.tar.gz", hash = "sha256:7f6194f4f4692d292da3f501c7f343ccd5e36c6a1becf7b7515e23e66d6bf1e9"},
 ]
 jupyter-core = [
     {file = "jupyter_core-4.6.3-py2.py3-none-any.whl", hash = "sha256:a4ee613c060fe5697d913416fc9d553599c05e4492d58fac1192c9a6844abb21"},
@@ -1726,8 +1726,8 @@ llvmlite = [
     {file = "llvmlite-0.34.0rc1.tar.gz", hash = "sha256:272717b85d9796d09057a21a3c760eae9a7a5db0ef80b9348ec8bde442b373bb"},
 ]
 loguru = [
-    {file = "loguru-0.5.1-py3-none-any.whl", hash = "sha256:e5d362a43cd2fc2da63551d79a6830619c4d5b3a8b976515748026f92f351b61"},
-    {file = "loguru-0.5.1.tar.gz", hash = "sha256:70201d5fce26da89b7a5f168caa2bb674e06b969829f56737db1d6472e53e7c3"},
+    {file = "loguru-0.5.2-py3-none-any.whl", hash = "sha256:a5e5e196b9958feaf534ac2050171d16576bae633074ce3e73af7dda7e9a58ae"},
+    {file = "loguru-0.5.2.tar.gz", hash = "sha256:5aecbf13bc8e2f6e5a5d0475460a345b44e2885464095ea7de44e8795857ad33"},
 ]
 lxml = [
     {file = "lxml-4.5.2-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:74f48ec98430e06c1fa8949b49ebdd8d27ceb9df8d3d1c92e1fdc2773f003f20"},
@@ -1763,7 +1763,7 @@ lxml = [
     {file = "lxml-4.5.2.tar.gz", hash = "sha256:cdc13a1682b2a6241080745b1953719e7fe0850b40a5c71ca574f090a1391df6"},
 ]
 marketdata = [
-    {file = "marketdata-0.2.0.tar.gz", hash = "sha256:63d621b9126ca017e40aac34eeee83c6ce53dc0eda8ee580dbc3fe30491901cf"},
+    {file = "marketdata-0.3.0.tar.gz", hash = "sha256:e160b00c86a23220a50ce3d46b11f07316d294ba42123f3b3dc47bd1c95afde2"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
@@ -1828,8 +1828,8 @@ mistune = [
     {file = "mistune-0.8.4.tar.gz", hash = "sha256:59a3429db53c50b5c6bcc8a07f8848cb00d7dc8bdb431a4ab41920d201d4756e"},
 ]
 more-itertools = [
-    {file = "more-itertools-8.4.0.tar.gz", hash = "sha256:68c70cc7167bdf5c7c9d8f6954a7837089c6a36bf565383919bb595efb8a17e5"},
-    {file = "more_itertools-8.4.0-py3-none-any.whl", hash = "sha256:b78134b2063dd214000685165d81c154522c3ee0a1c0d4d113c80361c234c5a2"},
+    {file = "more-itertools-8.5.0.tar.gz", hash = "sha256:6f83822ae94818eae2612063a5101a7311e68ae8002005b5e05f03fd74a86a20"},
+    {file = "more_itertools-8.5.0-py3-none-any.whl", hash = "sha256:9b30f12df9393f0d28af9210ff8efe48d10c94f73e5daf886f10c4b0b0b4f03c"},
 ]
 multidict = [
     {file = "multidict-4.7.6-cp35-cp35m-macosx_10_14_x86_64.whl", hash = "sha256:275ca32383bc5d1894b6975bb4ca6a7ff16ab76fa622967625baeebcf8079000"},
@@ -1997,8 +1997,8 @@ prometheus-client = [
     {file = "prometheus_client-0.8.0.tar.gz", hash = "sha256:c6e6b706833a6bd1fd51711299edee907857be10ece535126a158f911ee80915"},
 ]
 prompt-toolkit = [
-    {file = "prompt_toolkit-3.0.6-py3-none-any.whl", hash = "sha256:683397077a64cd1f750b71c05afcfc6612a7300cb6932666531e5a54f38ea564"},
-    {file = "prompt_toolkit-3.0.6.tar.gz", hash = "sha256:7630ab85a23302839a0f26b31cc24f518e6155dea1ed395ea61b42c45941b6a6"},
+    {file = "prompt_toolkit-3.0.7-py3-none-any.whl", hash = "sha256:83074ee28ad4ba6af190593d4d4c607ff525272a504eb159199b6dd9f950c950"},
+    {file = "prompt_toolkit-3.0.7.tar.gz", hash = "sha256:822f4605f28f7d2ba6b0b09a31e25e140871e96364d1d377667b547bb3bf4489"},
 ]
 psutil = [
     {file = "psutil-5.7.2-cp27-none-win32.whl", hash = "sha256:f2018461733b23f308c298653c8903d32aaad7873d25e1d228765e91ae42c3f2"},
@@ -2124,11 +2124,11 @@ pyzmq = [
     {file = "pyzmq-19.0.2.tar.gz", hash = "sha256:296540a065c8c21b26d63e3cea2d1d57902373b16e4256afe46422691903a438"},
 ]
 qplot = [
-    {file = "qplot-0.1.2.tar.gz", hash = "sha256:88ce2eee05cd00eda7f8cf348d315571404c93b635a57146f5e8a644b6fddb8a"},
+    {file = "qplot-0.1.2.tar.gz", hash = "sha256:414f8cfe6da7fed39afbfdfe2ea419fd9ad5b0d8208457e63b74e8cf335f2980"},
 ]
 qtconsole = [
-    {file = "qtconsole-4.7.6-py2.py3-none-any.whl", hash = "sha256:570b9e1dd4f9b727699b0ed04c6943d9d32d5a2085aa69d82d814e039bbcf74b"},
-    {file = "qtconsole-4.7.6.tar.gz", hash = "sha256:6c24397c19a49a5cf69582c931db4b0f6b00a78530a2bfd122936f2ebfae2fef"},
+    {file = "qtconsole-4.7.7-py2.py3-none-any.whl", hash = "sha256:7a42af4b1c51d870b41e4a1b67e2e71296c0edd1b2f46c647ad67dff421c2726"},
+    {file = "qtconsole-4.7.7.tar.gz", hash = "sha256:f236ead8711dba0702507dd8fad473c7216a86eefa6098eff8ec4b54f57d7804"},
 ]
 qtpy = [
     {file = "QtPy-1.9.0-py2.py3-none-any.whl", hash = "sha256:fa0b8363b363e89b2a6f49eddc162a04c0699ae95e109a6be3bb145a913190ea"},
@@ -2261,8 +2261,8 @@ tornado = [
     {file = "tornado-6.0.4.tar.gz", hash = "sha256:0fe2d45ba43b00a41cd73f8be321a44936dc1aba233dee979f17a042b83eb6dc"},
 ]
 traitlets = [
-    {file = "traitlets-4.3.3-py2.py3-none-any.whl", hash = "sha256:70b4c6a1d9019d7b4f6846832288f86998aa3b9207c6821f3578a6a6a467fe44"},
-    {file = "traitlets-4.3.3.tar.gz", hash = "sha256:d023ee369ddd2763310e4c3eae1ff649689440d4ae59d7485eb4cfbbe3e359f7"},
+    {file = "traitlets-5.0.4-py3-none-any.whl", hash = "sha256:9664ec0c526e48e7b47b7d14cd6b252efa03e0129011de0a9c1d70315d4309c3"},
+    {file = "traitlets-5.0.4.tar.gz", hash = "sha256:86c9351f94f95de9db8a04ad8e892da299a088a64fd283f9f6f18770ae5eae1b"},
 ]
 typed-ast = [
     {file = "typed_ast-1.4.1-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:73d785a950fc82dd2a25897d525d003f6378d1cb23ab305578394694202a58c3"},
@@ -2309,8 +2309,8 @@ widgetsnbextension = [
     {file = "widgetsnbextension-3.5.1.tar.gz", hash = "sha256:079f87d87270bce047512400efd70238820751a11d2d8cb137a5a5bdbaf255c7"},
 ]
 win32-setctime = [
-    {file = "win32_setctime-1.0.1-py3-none-any.whl", hash = "sha256:568fd636c68350bcc54755213fe01966fe0a6c90b386c0776425944a0382abef"},
-    {file = "win32_setctime-1.0.1.tar.gz", hash = "sha256:b47e5023ec7f0b4962950902b15bc56464a380d869f59d27dbf9ab423b23e8f9"},
+    {file = "win32_setctime-1.0.2-py3-none-any.whl", hash = "sha256:02b4c5959ca0b195f45c98115826c6e8a630b7cf648e724feaab1a5aa6250640"},
+    {file = "win32_setctime-1.0.2.tar.gz", hash = "sha256:47aa7c43548c1fc0a4f026d1944b748b37036df116c7c4cf908e82638d854313"},
 ]
 xarray = [
     {file = "xarray-0.16.0-py3-none-any.whl", hash = "sha256:e38452dbbb9f7b1938ae23b81ca7d66d1109818040048ec42e59c0c738cbe8f3"},

@@ -19,7 +19,7 @@ seaborn = "^0.10.1"
 psutil = "^5.7.2"
 qplot = {path = "../qplot/dist/qplot-0.1.2.tar.gz"}
 pytools = {path = "../pytools/dist/pytools-0.1.0.tar.gz"}
-marketdata = {path = "../marketdata/dist/marketdata-0.2.0.tar.gz"}
+marketdata = {path = "../marketdata/dist/marketdata-0.3.0.tar.gz"}
 lark-parser = "^0.9.0"
 bs4 = "^0.0.1"
 lxml = "^4.5.2"
