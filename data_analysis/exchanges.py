@@ -5,13 +5,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-#%%
-
-response = requests.get('https://www.tradinghours.com/markets-by-capitalization')
-soup = BeautifulSoup(response.content, 'html.parser')
-
-exchanges_table = soup.find('table', id='capTable')
-exchanges_table = pd.read_html(str(exchanges_table))[0]
 
 # %%
 def parse_market_cap(mkt_cap_str):
@@ -23,7 +16,32 @@ def parse_market_cap(mkt_cap_str):
     amount = float(amount) * unit_dict[unit]
     return amount
 
+
 def normalize_exchanges_table(exchanges_table):
-    
+    exchanges_table = exchanges_table[['Country', 'Exchange', 'Market Cap (USD)']]
+    exchanges_table.loc[:, 'Market Cap (USD)'] = exchanges_table[
+        'Market Cap (USD)'
+    ].apply(parse_market_cap)
+    return exchanges_table
+
 
 #%%
+response = requests.get('https://www.tradinghours.com/markets-by-capitalization')
+soup = BeautifulSoup(response.content, 'html.parser')
+exchanges_table = soup.find('table', id='capTable')
+exchanges_table = pd.read_html(str(exchanges_table))[0]
+exchanges_table = normalize_exchanges_table(exchanges_table)
+#%%
+
+from qplot import get_axes
+
+tmp = exchanges_table.set_index('Exchange')['Market Cap (USD)']
+tmp = tmp.sort_values(ascending=False)[:20]
+#%%
+import qplot.activate
+
+ax = get_axes(10)
+tmp.plot.bar(ax=ax)
+
+
+# %%

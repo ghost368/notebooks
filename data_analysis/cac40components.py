@@ -32,3 +32,5 @@ def normalize_cac_table(cac_table):
 #%%
 
 cac_table = load_cac_table().pipe(normalize_cac_table)
+
+# %%
