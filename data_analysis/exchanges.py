@@ -42,6 +42,7 @@ import qplot.activate
 
 ax = get_axes(10)
 tmp.plot.bar(ax=ax)
+exchanges_table.head()
 
 
 # %%
