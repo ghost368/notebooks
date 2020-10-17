@@ -1,0 +1,7 @@
+- plotly legend title (allow None), also no xlabel, ylabel by default
+
+- legend is not outside by default
+
+- plotly scatter not working with qplot
+
+- not working properly if I don't state 'plotly' engine and then using px to make some plots
