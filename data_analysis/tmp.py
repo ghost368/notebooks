@@ -8,97 +8,46 @@ import pandas as pd
 
 #%%
 
-arr = np.zeros((5, 4), dtype=float, order='C')
-arr[0, -1] = -1
-arr
+class Singleton:
+    _instance = None
 
-arr.flatten(order='F')
-
-np.zeros_like(arr)
-
-arr.byteswap().dtype.byteorder
-arr.dtype.byteorder
-
-arr.byteswap()
-
-#%%
-strarr = np.array(['a', 'bc', 'cd'])
-strarr.dtype.byteorder, strarr.byteswap().dtype
-
-strarr.byteswap()
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = object.__new__(cls)
+        return cls._instance
 
 #%%
 
-arr[2, 3] = -4
-arr.reshape((2, 10), order='F').T
+class Point(Singleton):
 
+    dim: int = 2
 
-arr.compress([True, False, True, True, False], axis=0)
-arr
+    def __init__(self, x, y=None):
+        if isinstance(x, Point):
+            self.x = x.x
+            self.y = x.y
+        else:   
+            self.x=x
+            y = y or x
+            self.y=y
+    
+    @classmethod 
+    def change_dim(cls):
+        cls.dim = 3
 
-
-np.repeat(arr, 3)
-xx = arr.ravel()
-xx[3] = 19
-arr
-
-
-yy = np.vstack([arr] * 4)
-arr[0, 0] = 12
-
-yy
-arr
-
-#%%
-arr.dtype
-
-
-xx = arr.view(dtype=int)
-
-xx.dtype
-xx[0, 0] = -123
+    @staticmethod 
+    def print():
+        print('hello')
 
 
 #%%
+bp = Point(4, 5)
+bp2 = Point(10, 15)
 
-dtp = np.dtype([('abc', np.int64), ('xyz', bool)])
-dtp
-
-dtp['abc']
-
-
-recarr = np.array([(1, True), (2, False), (4, True), (-5, False)], dtype=dtp)
-recarr['xyz']
+bp.x
 
 
-#%%
-arr[0, 0] = -3
 
-np.asfortranarray(arr).flatten()
-#%%
-
-arr = pd.DataFrame([[True, 1], [False, 4]]).to_numpy()
-arr = arr.T
-
-recarr = np.core.records.fromarrays(arr, names=['a', 'b'], formats=[bool, int])
-recarr['a']
-
-
-xx = np.recarray(names=['a', 'b'], formats=['bool', 'i8'], shape=(2,))
-xx['a']
-
-xx[:]
-
-xx[:] = [(False, 4), (True, 2)]
-xx['a']
-
-
-#%%
-
-arr.dtype
-
-arr2 = arr.astype(float)
-
-
-arr2[0, 0] = -1
-arr
+bp.change_dim()
+bp.dim
+bp.print()
