@@ -1,34 +1,21 @@
 #%%
-class Tmp:
-    version: 2
-
-    def __init__(self, x):
-        self.x = x
-
-
-#%%
-
-t = Tmp(4)
-t.x
-
-Tmp.version
-
-#%%
-
-from dataclasses import dataclass
 import numpy as np
-
-class SetItemMixin(object):
-    def __setitem__(self, key, value):
-        super().__setattr__(key, value)
-
-#%% 
-
-@dataclass
-class Group(SetItemMixin):
-    x : int
-    y : int
-
+import pandas as pd
+import scipy as sp
 
 #%%
-g = Group(4, 5)
+
+
+def f(x):
+    for i in x:
+        if i == 3:
+            raise ValueError
+        print(i)
+
+#%%
+
+print('I was here')
+
+#f([1, 2, 3, 4, 5])
+
+
